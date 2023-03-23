@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  #main {
+    position: absolute;
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    padding-top: 5rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+    /* justify-content: space-between; */
+    /* background:url("bg.jpg"); */
+    /* background-color: black; */
+    /* background-size: cover; */
+    overflow-y: hidden;
+  }
+  #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #bg img {
+    position: fixed;
+    /* Margin required to center the moon for mobile devices */
+    /* margin-right: 50vw; */ 
+    top: 0px;
+    /* left: 20px; */
+    /* object-fit: cover; */
+    /* object-position: 50% 0%; */
+    min-width: 100vw;
+    height: 200%;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background:url("bg.jpg"); */
+    /* background-color: black; */
+    /* background-size: cover; */
+    /* overflow: hidden; */
+    z-index: -1;
+    /* filter: grayscale(60%); */
+    filter: brightness(.3);
+    -webkit-animation: hue-rotate 6s infinite;
+            animation: hue-rotate 6s infinite;
+  }
+  
+  @-webkit-keyframes hue-rotate {
+    0% {
+      -webkit-filter: brightness(.3) hue-rotate(0deg);
+    }
+    50% {
+      -webkit-filter: brightness(.3) hue-rotate(40deg);
+    }
+    100% {
+      -webkit-filter: brightness(.3) hue-rotate(0deg);
+    }
+  }
+  
+  @keyframes hue-rotate {
+    0% {
+      -webkit-filter: brightness(.3) hue-rotate(0deg);
+    }
+    50% {
+      -webkit-filter: brightness(.3) hue-rotate(40deg);
+    }
+    100% {
+      -webkit-filter: brightness(.3) hue-rotate(0deg);
+    }
+  }
+  
+  
+  nav {
+    /* color: white; */
+    height: 5rem;
+    width: 100vw;
+    /* background-color: #131418; */
+    /* background-color: black; */
+    opacity: 0.95;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+  }
+  
+  
+  /*Styling Links*/
+  .nav-links {
+    display: flex;
+    list-style: none;
+    width: 100vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    margin: 0 0.7vw;
+  }
+  .nav-links li a:hover {
+    color: #61dafb;
+  }
+  .nav-links li {
+    position: relative;
+  }
+  .nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61dafb;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: -7px 0 0 10%;
+    /* margin-top: -10px; */
+  }
+  .nav-links li a:hover::before {
+    width: 80%;
+  }
+  
+  
+  /*Styling Buttons*/
+  .login-button {
+    color: white;
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+  }
+  .join-button {
+    color: #131418;
+    background-color: #61dafb;
+    border: 1.5px solid #61dafb;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+  }
+  
+  
+  /*Styling Hamburger Icon*/
+  .hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  .hamburger {
+    display: none;
+  }
+  
+  
+  /*Stying for small screens*/
+  @media screen and (max-width: 800px) {
+    nav {
+      position: fixed;
+      z-index: 3;
+    }
+    .social-media {
+      font-size: 0.8rem;
+    }
+    .hamburger {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+      transition: all 0.7s ease;
+    }
+    .nav-links {
+      position: fixed;
+      background: #131418;
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      clip-path: circle(50px at 90% -20%);
+      -webkit-clip-path: circle(50px at 90% -10%);
+      transition: all 1s ease-out;
+      pointer-events: none;
+    }
+    .nav-links.open {
+      clip-path: circle(1000px at 90% -10%);
+      -webkit-clip-path: circle(1000px at 90% -10%);
+      pointer-events: all;
+      opacity: 1;
+      /* background-color: red; */
+    }
+    .nav-links li {
+      opacity: 0;
+    }
+    .nav-links li:nth-child(1) {
+      transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+      transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+      transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4) {
+      transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5) {
+      transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6) {
+      transition: all 0.5s ease 0.9s;
+      margin: 0;
+    }
+    .nav-links li:nth-child(7) {
+      transition: all 0.5s ease 1s;
+      margin: 0;
+    }
+    li.fade {
+      opacity: 1;
+    }
+  }
+  /*Animating Hamburger Icon on Click*/
+  .line1 .line2 .line3 {
+    background-color: white;
+  }
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  footer {
+    width: 100vw;
+    position: relative;
+    height: 2rem;
+    font-size: 1rem;
+    color: white;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    /* background-color: black; */
+  }
+  
+  
+  .prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+  

@@ -283,9 +283,15 @@
   }
   
   
+  .grandmaster{color:#ff1a1a!important}
+  .master{color:#ff981a!important}
+  .candidate-master{color:#ff55ff!important}
+  .expert{color:#337dff!important}
+  .specialist{color:#57fcf2!important}
+  .pupil{color: #46F346!important}
+  .newbie{color:#988f81!important}
   .green{color: green;}
   .black{color:#000!important;font-weight:400!important}
-  .legendary{color:red!important}
   .user-legendary::first-letter{color:#000!important}
   .legendary-first-letter{color:#000!important}
   .red{color:red!important}

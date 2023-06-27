@@ -1,12 +1,12 @@
-function getRatingsColor(ratings) {
-    if (ratings < 1200) return "gray";
-    if (ratings < 1400) return "green";
-    if (ratings < 1600) return "cyan";
-    if (ratings < 1900) return "blue";
-    if (ratings < 2100) return "violet";
-    if (ratings < 2300) return "orange";
-    if (ratings < 2400) return "yellow";
-    return "red";
+function getRatingsColorClass(ratings) {
+    if (ratings < 1200) return "newbie";
+    if (ratings < 1400) return "pupil";
+    if (ratings < 1600) return "specialist";
+    if (ratings < 1900) return "expert";
+    if (ratings < 2100) return "candidate-master";
+    if (ratings < 2300) return "master";
+    if (ratings < 2400) return "international-master";
+    return "grandmaster";
   }
   
   function createBox(rank, name, handle, ratings, score) {
@@ -44,9 +44,9 @@ function getRatingsColor(ratings) {
     }
     box.appendChild(rankDiv);
   
-    let color = getRatingsColor(ratings);
-    box.innerHTML += `<div class="name"><p style="color:${color}">${name}</p></div>
-      <div class="handle"><a style="color:${color}" href="https://codeforces.com/profile/${handle}">${handle}</a></div>
+    let color = getRatingsColorClass(ratings);
+    box.innerHTML += `<div class="name"><p class="${color}">${name}</p></div>
+      <div class="handle"><a class="${color}" href="https://codeforces.com/profile/${handle}">${handle}</a></div>
       <div class="score"><p>${score}</p></div>`;
   
     return box;

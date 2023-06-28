@@ -229,6 +229,7 @@ content {
   .social-media a {
     font-size: 2rem;
     color: rgb(189, 189, 189);
+    text-decoration: none;
   }
   
 

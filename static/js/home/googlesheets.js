@@ -48,7 +48,7 @@ function createTeamCard(userData) {
         <p>${position}</p>
         <div class="social-media">
             ${github?'<a href="'+github+'" class="github fa fa-github-square github zoom-upon-hover"></a>':''}
-            <span class="date ${cf_title.toLowerCase()}">${handle}</span>
+            <a href="https://codeforces.com/profile/${handle}" class="date ${cf_title.toLowerCase()}">${handle}</a>
             ${linkedin?'<a href="'+linkedin+'" class="linkedin fa fa-linkedin zoom-upon-hover"></a>':''}
         </div>
     </div>`;

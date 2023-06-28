@@ -18,7 +18,6 @@
             let dataArray = await getGoogleSheetData(url);
             try {
                 data = dataArray[0]; // because data[0] is current year team
-                console.log(data);
                 document.querySelector("#main > content").appendChild(createHeading(data[0]));
                 for (let i = 1; i < data.length; i++) {
                     document.querySelector("#main > content").appendChild(createTeamCard(data[i]));

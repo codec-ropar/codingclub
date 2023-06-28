@@ -21,7 +21,6 @@
         try {
             for (let j = 1; j < dataArray.length; j++) {
                 data = dataArray[j]; // because data[0] is current year team so exclude it
-                console.log(data);
                 document.querySelector("#main > content").appendChild(createHeading(data[0]));
                 for (let i = 1; i < data.length; i++) {
                     document.querySelector("#main > content").appendChild(createTeamCard(data[i]));

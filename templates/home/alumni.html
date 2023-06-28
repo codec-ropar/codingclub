@@ -7,87 +7,41 @@
 
 {% block cssfiles %}
     <link rel="stylesheet" href="{% static 'css/home/alumni.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/team.css' %}"/>
 {% endblock %}
 
 
 {% block content %}
 
-    <div class="heading">
-        <h1>Team 2022-23</h1>
-    </div>
-    <div class="card rgb">
-        <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('{% static 'images/img1.jpg' %}');"></div>
-        <div class="card-text">
-            <div class="fullname-text">Anant Prakash Singh</div>
-            <p>Representative</p>
-            <div class="social-media">
-                <a href="#" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-                <span class="date">Pupil</span>
-                <a href="#" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
-                <!-- <a href="#" class="fa fa-instagram zoom-upon-hover" id="instagram"></a> -->
-                <!-- <a href="#" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a> -->
-            </div>
-        </div>
-    </div>
 
-    <div class="card rgb">
-        <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('{% static 'images/img1.jpg' %}');"></div>
-        <div class="card-text">
-            <div class="fullname-text">Anant Prakash Singh</div>
-            <p>Representative</p>
-            <div class="social-media">
-                <a href="#" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-                <span class="date">Pupil</span>
-                <a href="#" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
-                <!-- <a href="#" class="fa fa-instagram zoom-upon-hover" id="instagram"></a> -->
-                <!-- <a href="#" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a> -->
-            </div>
-        </div>
-    </div>
-
-    <div class="card rgb">
-        <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('{% static 'images/img1.jpg' %}');"></div>
-        <div class="card-text">
-            <div class="fullname-text">Anant Prakash Singh</div>
-            <p>Representative</p>
-            <div class="social-media">
-                <a href="#" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-                <span class="date">Pupil</span>
-                <a href="#" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
-                <!-- <a href="#" class="fa fa-instagram zoom-upon-hover" id="instagram"></a> -->
-                <!-- <a href="#" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a> -->
-            </div>
-        </div>
-    </div>
-
-    <div class="card rgb">
-        <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('{% static 'images/img1.jpg' %}');"></div>
-        <div class="card-text">
-            <div class="fullname-text">Anant Prakash Singh</div>
-            <p>Representative</p>
-            <div class="social-media">
-                <a href="#" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-                <span class="date">Pupil</span>
-                <a href="#" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
-                <!-- <a href="#" class="fa fa-instagram zoom-upon-hover" id="instagram"></a> -->
-                <!-- <a href="#" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a> -->
-            </div>
-        </div>
-    </div>
-
-    <div class="card rgb">
-        <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('{% static 'images/img1.jpg' %}');"></div>
-        <div class="card-text">
-            <div class="fullname-text">Anant Prakash Singh</div>
-            <p>Representative</p>
-            <div class="social-media">
-                <a href="#" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-                <span class="date">Pupil</span>
-                <a href="#" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
-                <!-- <a href="#" class="fa fa-instagram zoom-upon-hover" id="instagram"></a> -->
-                <!-- <a href="#" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a> -->
-            </div>
-        </div>
-    </div>
+<script src="{% static 'js/home/googlesheets.js' %}"></script>
+<script>
+    async function populateTeam() {
+        let dataArray = await getGoogleSheetData(url);
+        try {
+            for (let j = 1; j < dataArray.length; j++) {
+                data = dataArray[j]; // because data[0] is current year team so exclude it
+                console.log(data);
+                document.querySelector("#main > content").appendChild(createHeading(data[0]));
+                for (let i = 1; i < data.length; i++) {
+                    document.querySelector("#main > content").appendChild(createTeamCard(data[i]));
+                }
+            }
+            VanillaTilt.init(document.querySelectorAll(".card"), {
+                max: 25,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.5,
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    populateTeam();
+    
+    // Changing height of #main
+    let main = document.querySelector("#main");
+    main.style.height = "auto";
+</script>    
 
 {% endblock %}

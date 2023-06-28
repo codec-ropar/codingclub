@@ -97,7 +97,7 @@ content {
     align-items: center;
   }
   .card-text .date {
-    color: rgb(255, 7, 110);
+    color: white;
     font-size:1rem;
   }
   .card-text p {
@@ -168,7 +168,7 @@ content {
     }
     .card-text .date {
       /* color: rgb(255, 7, 110); */
-      color: green;
+      color: white;
       font-size: 12px;
     }
     .card-text p {
@@ -231,3 +231,19 @@ content {
     color: rgb(189, 189, 189);
   }
   
+
+  .grandmaster{color:#ff1a1a!important}
+  .master{color:#ff981a!important}
+  .candidate-master{color:#ff55ff!important}
+  .candidate{color:#ff55ff!important}
+  .expert{color:#337dff!important}
+  .specialist{color:#57fcf2!important}
+  .pupil{color: #46F346!important}
+  .newbie{color:#988f81!important}
+
+
+  @media screen and (max-width: 500px) {
+    .github, .linkedin {
+      display: none;
+    }
+  }

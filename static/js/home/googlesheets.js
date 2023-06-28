@@ -36,21 +36,28 @@ async function getGoogleSheetData(url) {
 
 
 
-function createTeamCard(name, position, batch, image, handle, cf_title, linkedin, github) {
+function createTeamCard(userData) {
+    let name = userData.name, position = userData.position, batch = userData.batch, image = userData.image, handle = userData.handle, cf_title = userData.cf_title, linkedin = userData.linkedin, github = userData.github;
     let card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("rgb");
     card.innerHTML = `
-    <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('https://user-images.githubusercontent.com/69471106/233761893-8b1a29ef-3c3f-4e03-9d14-a4871d840fbe.png');"></div>
+    <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/profile/${image}'); background-size: cover;"></div>
     <div class="card-text">
-        <div class="fullname-text">Anant Prakash Singh</div>
-        <p>Representative</p>
+        <div class="fullname-text">${name}</div>
+        <p>${position}</p>
         <div class="social-media">
-            <a href="#" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-            <span class="date">Pupil</span>
-            <a href="#" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
+            ${github?'<a href="'+github+'" class="github fa fa-github-square github zoom-upon-hover"></a>':''}
+            <span class="date ${cf_title.toLowerCase()}">${handle}</span>
+            ${linkedin?'<a href="'+linkedin+'" class="linkedin fa fa-linkedin zoom-upon-hover"></a>':''}
         </div>
     </div>`;
-
     return card;
+}
+
+function createHeading(text) {
+    let heading = document.createElement("div");
+    heading.classList.add("heading");
+    heading.innerHTML = `<h1>${text}</h1>`;
+    return heading;
 }

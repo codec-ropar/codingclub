@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ghs11tvt5=+n0=o88076(_f!9mdnmr=2j6f#635gjy2r^$k0vo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['d9ec-104-28-193-10.ngrok.io', 'localhost', 'codingclub-six.vercel.app']
+ALLOWED_HOSTS = ['d9ec-104-28-193-10.ngrok.io', 'localhost', 'codingclub-six.vercel.app', '.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -126,9 +126,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     '/var/www/static/',
+# ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+# STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+
+
+
+# For Vercel deployment
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')

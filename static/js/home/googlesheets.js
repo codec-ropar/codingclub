@@ -42,7 +42,7 @@ function createTeamCard(userData) {
     card.classList.add("card");
     card.classList.add("rgb");
     card.innerHTML = `
-    <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/profile/${image}'); background-size: cover;"></div>
+    <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/profile/${image}'); background-position: center; background-size:cover;"></div>
     <div class="card-text">
         <div class="fullname-text">${name}</div>
         <p>${position}</p>

@@ -26,10 +26,10 @@ content {
 
   .card {
     display: grid;
-    max-height: 250px;
+    max-height: 300px;
     max-width: 220px;
     grid-template-columns: 220px;
-    grid-template-rows: 120px 150px 10px;
+    grid-template-rows: 160px 150px 10px;
     grid-template-areas: "image" "text" "stats";
     border-radius: 12px;
     background: #1d1d1d;
@@ -147,10 +147,10 @@ content {
   
   @media screen and (max-width: 800px) {
     .card {
-      max-height: 70vw;
+      max-height: 60vw;
       max-width: 35vw;
       grid-template-columns: 35vw;
-      grid-template-rows: 100px 100px 20px;
+      grid-template-rows: 120px 130px 10px;
       border-radius: 6px;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.9);
       margin: 20px;

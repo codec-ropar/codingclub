@@ -1,3 +1,10 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu&display=swap);
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
 .heading {
     display: flex;
     align-items: center;
@@ -5,10 +12,36 @@
     width: 100vw;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #f2f5f7;
+    color: #DAFFFB;
     text-shadow: 0 0 20px #000;
     margin: 0;
     padding: 0;
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
+.events{
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  align-items: center;
+  color: white;
+  /* margin: 10px; */
+  /* padding: 10px; */
+
+  justify-content: space-evenly;
+}
+.event-block{
+  margin: 10px;
+  /* background-color: green !important; */
+  padding: 20px;
+  width: 23rem;
+  height: auto;
+  border: #435B66 0.5rem ridge;
+}
+.event-block:hover{
+  /* background-color: #1a1a1a !important; */
+  background: #0F6292;
+  color: #C5DFF8 !important;
+  box-shadow: 0 0 5px #0F6292, 0 0 25px #0F6292, 0 0 50px #0F6292, 0 0 100px #0F6292;
+  border: none;
+}

@@ -8,17 +8,41 @@
 {% block cssfiles %}
     <link rel="stylesheet" href="{% static 'css/home/events.css' %}"/>
 {% endblock %}
-
-
 {% block content %}
-
+<div class="upcoming-events">
     <div class="heading">
         <h1>Upcoming Events</h1>
     </div>
     
-    <div class="heading">
-        <h3><br><br>To be posted soon...</h3>
+    <div class="events" style="display: flex;">
+        <div class="event-block">
+            <div class="event-image">
+                <img src="{% static 'images/home/event1.jpg' %}" alt="event1">
+            </div>
+            <div class="event-details">
+                <h2>Event 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+        </div>
     </div>
+</div>
+<div class="upcoming-events">
+    <div class="heading">
+        <h1>Past Events</h1>
+    </div>
+    
+    <div class="events">
+        <div class="event-block">
+            <div class="event-image">
+                <img src="{% static 'images/home/event1.jpg' %}" alt="event1">
+            </div>
+            <div class="event-details">
+                <h2>Event 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
     
 {% endblock %}

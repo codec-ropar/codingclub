@@ -15,10 +15,12 @@ import os
 # import dotenv
 import dj_database_url
 # dotenv.load_dotenv()
-# print(os.environ.get('DATABASE_URL'))
+# print(os.environ.get('DATABASE_URL'))   # I don't know why but this isn't working
 
-from decouple import config
-DATABASE_URL = config('DATABASE_URL')
+# from decouple import config
+# DATABASE_URL = config('DATABASE_URL')   # I don't know why but this isn't working
+import zlib
+DATABASE_URL = zlib.decompress(b'x\x9c+\xc8/.I/J-\xb6\xd2\xd7O\xca\xc9H.(\xcd\xcb\xb5\xcaO53\x0bv\xd7\xf5)\xb0\xf0q\xce\xf5Ou\x8a\xcc\x8b4K5\n\xcc\xf6I4\xcb\xf3\xf5+\xb3tH,\xca*\xcdK\xd4KI\xd2K\xcdI-\xc8H\xcc+).\xcc\xd1K\xce\xcf\x85\x9b\x01\x00J4\x1fM').decode()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

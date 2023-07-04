@@ -1,8 +1,9 @@
 asgiref==3.7.2
+dj-database-url==0.5.0
 Django==4.2.2
-sqlparse==0.4.4
+psycopg2-binary==2.9.3
 typing-extensions==4.6.3
 tzdata==2023.3
-psycopg2==2.9.3
-dj-database-url==0.5.0
+pytz==2022.5
+sqlparse==0.4.4
 requests==2.27.1

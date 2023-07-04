@@ -12,16 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-# import dotenv
 import dj_database_url
-# dotenv.load_dotenv()
-# print(os.environ.get('POSTGRES_URL'))   # I don't know why but this isn't working
 
 from decouple import config
 DATABASE_URL = config('POSTGRES_URL')   # I don't know why but this isn't working
-# import zlib
-# # DATABASE_URL = zlib.decompress(b'x\x9c+\xc8/.I/J-\xb6\xd2\xd7O\xca\xc9H.(\xcd\xcb\xb5\xcaO53\x0bv\xd7\xf5)\xb0\xf0q\xce\xf5Ou\x8a\xcc\x8b4K5\n\xcc\xf6I4\xcb\xf3\xf5+\xb3tH,\xca*\xcdK\xd4KI\xd2K\xcdI-\xc8H\xcc+).\xcc\xd1K\xce\xcf\x85\x9b\x01\x00J4\x1fM').decode()
-# DATABASE_URL = zlib.decompress(b"x\x9c-\xcc=\x12\xc2 \x10\x06\xd0\x13-\x8c&\x04\xa5\xca\x01\xd2\xa5\xb3#\xe13\xe6\x17\x86]\x9c1\xa7\xb7\xd0\xf6\x15/E\x96)\x83\x9d\xd6\x01O_6q\xddbCZ{_\x1e7i\x91\x88_\xf3\xf1\xa1!\x03'\xc86\xd64wU\x98\xe0Y\xe8\xa2\xd2?Po\xe4\x11\x1b\xb1\xc4\xec'\xa81\xee\xce\xd4\xd5U\xff<\x0c_\xf9\xe5%\xc5").decode()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -99,7 +93,6 @@ DATABASES['default'] = dj_database_url.parse(
     # conn_max_age=600,
     # conn_health_checks=True,
 )
-print(DATABASES)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

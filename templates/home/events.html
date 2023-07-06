@@ -9,25 +9,27 @@
     <link rel="stylesheet" href="{% static 'css/home/events.css' %}"/>
 {% endblock %}
 {% block content %}
-<div class="upcoming-events">
-    <div class="heading">
+{% comment %} <div class="upcoming-events">
+    <div class="heading" style="color: white;">
         <h1>Upcoming Events</h1>
     </div>
     
-    <div class="events" style="display: flex;">
+    <div class="events">
         <div class="event-block">
-            <div class="event-image">
-                <img src="{% static 'images/home/event1.jpg' %}" alt="event1">
-            </div>
+            <img src="{% static 'images/home/event1.jpg' %}" alt="">
             <div class="event-details">
                 <h2>Event 1</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                <br>
+                <p class="Date">Date: </p>
+                <br>
+                <p class="Venue">Date: </p>
             </div>
         </div>
     </div>
 </div>
-<div class="upcoming-events">
-    <div class="heading">
+<div class="allevents">
+    <div class="heading" style="color: white;">
         <h1>Past Events</h1>
     </div>
     
@@ -39,10 +41,88 @@
             <div class="event-details">
                 <h2>Event 1</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                <p class="Date">Date: </p>
+                <p class="Time">Time: </p>
+                <p class="Venue">Venue: </p>
             </div>
         </div>
     </div>
-</div>
+</div>  {% endcomment %}
+<script>
+    var url = 'https://docs.google.com/spreadsheets/d/1KbvLXThlUEhoPrzYyD8gmLIi974UsBTv7tC-KwKdQOo/export?format=tsv&gid=834916002';
+    async function getGoogleSheetData(url){
+        let data = await fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                let result = [];
+                let rows = data.split('\n');
+    
+                for(let i = 0; i<rows.length; i++){
+                    if(rows[i].trim() == '') continue;
+                    let cell = rows[i].split('\t');
+                    for(let j = 0; j<cell.length; j++){
+                        cell[j] = cell[j].trim();
+                    }
+                    result.push(cell);
+                }
+                // console.log(result);
+                return result;
+            });
+        return data;
+    }
+    async function main(){
+        let data = await getGoogleSheetData(url);
+        console.log(data);
+    
+        for(let i = 1; i<data.length; i++){
+            if(data[i][0] == '-'){
+                all_event = document.createElement('div');
+                all_event.className = 'all_event';
+                all_event.innerHTML = `
+                <div class="heading" style="color:white;">
+                <h1>${data[i][1]}</h1>
+                </div>`;
+                i++;
+                events = document.createElement('div');
+                events.className = 'events';
+                while(i < data.length){
+                    if(data[i][0] == '-') break;
+                    if(data[i][0] == ''){
+                        i++;
+                        continue;
+                    }
+                    events_block = document.createElement('div');
+                    events_block.innerHTML = `
+                    <div class="event-image">
+                        <img src="/static/images/events/${data[i][5]}">
+                    </div>
+                    <div class="event-details">
+                        <h2>${data[i][0]}</h2>
+                        <p>${data[i][1]}</p>
+                        <br>
+                        <p>${data[0][2]}: ${data[i][2]}</p>
+                        <br>
+                        <p>${data[0][3]}: ${data[i][3]}</p>
+                        <br>
+                        <p>${data[0][4]}: ${data[i][4]}</p>
+                    </div>
+                    `;
+                    events_block.className = 'event-block';
+                    events.appendChild(events_block);
+                    i++;
+                    console.log(data[0][2]);
+                }
+                all_event.appendChild(events);
+                console.log(all_event);
+                content = document.querySelector('#main > content');
+                content.appendChild(all_event);
+                console.log
+                i--;
+            }
+        }
+    }
+    main();
+</script>
 
     
 {% endblock %}

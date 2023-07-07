@@ -12,7 +12,7 @@
     width: 100vw;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #DAFFFB;
+    /* color: #DAFFFB; */
     text-shadow: 0 0 20px #000;
     margin: 0;
     padding: 0;
@@ -43,5 +43,25 @@
   background: #0F6292;
   color: #C5DFF8 !important;
   box-shadow: 0 0 5px #0F6292, 0 0 25px #0F6292, 0 0 50px #0F6292, 0 0 100px #0F6292;
+  scale: 1.1;
   border: none;
+  /* margin: 0.5rem; */
+}
+
+
+.event-image{
+  height: 10rem;
+  width: 15rem;
+  display: block;
+  margin:auto;
+}
+.event-image>img{
+  height: 100%;
+  width: 100%;
+}
+.event-details{
+
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 200;
 }

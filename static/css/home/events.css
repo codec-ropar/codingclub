@@ -38,7 +38,7 @@
   width: min(23rem, 90%);
   height: auto;
   border: #435B66 0.5rem ridge;
-  transition: 0.5s;
+  transition: 0.3s ease-in-out;
 }
 .event-block:hover{
   /* background-color: #1a1a1a !important; */

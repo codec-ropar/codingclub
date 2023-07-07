@@ -65,14 +65,14 @@
                     }
                     result.push(cell);
                 }
-                // console.log(result);
+                // // console.log(result);
                 return result;
             });
         return data;
     }
     async function main(){
         let data = await getGoogleSheetData(url);
-        console.log(data);
+        // console.log(data);
     
         for(let i = 1; i<data.length; i++){
             if(data[i][0] == '-'){
@@ -110,13 +110,13 @@
                     events_block.className = 'event-block';
                     events.appendChild(events_block);
                     i++;
-                    console.log(data[0][2]);
+                    // console.log(data[0][2]);
                 }
                 all_event.appendChild(events);
-                console.log(all_event);
+                // console.log(all_event);
                 content = document.querySelector('#main > content');
                 content.appendChild(all_event);
-                console.log
+                // console.log
                 i--;
             }
         }

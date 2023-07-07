@@ -33,18 +33,20 @@
 .event-block{
   margin: 10px;
   /* background-color: green !important; */
+  backdrop-filter: blur(50px);
   padding: 20px;
-  width: 23rem;
+  width: min(23rem, 90%);
   height: auto;
   border: #435B66 0.5rem ridge;
+  transition: 0.5s;
 }
 .event-block:hover{
   /* background-color: #1a1a1a !important; */
-  background: #0F6292;
-  color: #C5DFF8 !important;
-  box-shadow: 0 0 5px #0F6292, 0 0 25px #0F6292, 0 0 50px #0F6292, 0 0 100px #0F6292;
-  scale: 1.1;
-  border: none;
+  /* background: #0F6292;
+  color: #C5DFF8 !important; */
+  box-shadow: 0 0 5px #083D5C, 0 0 25px #083D5C, 0 0 50px #083D5C, 0 0 100px #083D5C;
+  scale: 1.03;
+  /* border: none; */
   /* margin: 0.5rem; */
 }
 

@@ -305,5 +305,24 @@
   .gray{color:gray!important}
   .admin{color:#000!important}
   
-  
+
+
+#sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 90vw;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px #000;
+}
+
+#sub-header marquee a {
+  color: blueviolet;
+}
+
+
   

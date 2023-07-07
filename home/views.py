@@ -58,6 +58,3 @@ def updateCoders(request):
     
     return JsonResponse({'status': 'success', 'message': 'Successfully updated database', 'time': str(dt.now()), 'json': json_str})
 
-
-updateCoders(None)
-exit()

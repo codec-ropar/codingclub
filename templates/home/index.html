@@ -3,8 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Coding Club IIT Ropar">
+    <meta property="og:description" content="Official website">
+    <meta property="og:image" content="{% static 'images/logo-new.jpg' %}">
+    <meta property="og:image:alt" content="Coding Club">
+    <meta property="og:url" content="https://thecodingclub.vercel.app/">
+    <meta name="twitter:card" content="Official website">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -13,6 +20,12 @@
     <title>Home | Coding Club</title>
 </head>
 <body>
+    <style>
+        @font-face {
+            font-family: 'proxy';
+            src: url("{% static 'fonts/proxy.ttf' %}") format('truetype');
+        }
+    </style>
     <div id="app" style="background-color:black; padding-top: 0rem; width: 100vw; height: 100vh; z-index: 15;">
         <nav>
             <div class="hamburger">
@@ -40,14 +53,14 @@
 
         <div id="hero" style="position: absolute; display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh;">
             <div class="hero-text">
-                <img style="width: 6rem;" src="{% static 'images/logo.png' %}" alt="Logo Image">
-                <div id="coding-club-heading" class="prevent-select" style="color: white; margin: 3rem;">Coding Club<br>IIT Ropar</div>
-                <p  class="prevent-select" style="color: white; margin-bottom: 5rem; text-align: center;">We are a group of students who are passionate about Algorithms and Competitive Programming.</p>
+                <img style="width: 8rem;" src="{% static 'images/logo.png' %}" alt="Logo Image">
+                <div id="coding-club-heading" class="prevent-select" style="margin: 2rem; font-weight:600;">CODING CLUB<br>IIT ROPAR</div>
+                <p class="prevent-select" style="color: white; margin-bottom: 5rem; text-align: center;">A thriving community of tech enthusiasts, dedicated to honing coding skills, fostering innovation, and embracing challenges. With a focus on competitive programming and collaborative learning, we empower members to push boundaries, explore emerging technologies, and unleash their full coding potential.</p>
                 <div class="social-media">
-                    <a href="https://www.instagram.com/coding_iitrpr/" class="fa fa-instagram zoom-upon-hover" id="instagram"></a>
-                    <a href="https://www.linkedin.com/in/coding-club-iit-ropar-a73320211/" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
-                    <a href="https://github.com/codec-ropar/" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
-                    <a href="https://www.facebook.com/groups/codingclub.iitrpr/" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a>
+                    <a style="scale: .8" href="https://www.instagram.com/coding_iitrpr/" class="fa fa-instagram zoom-upon-hover" id="instagram"></a>
+                    <a style="scale: .8" href="https://www.linkedin.com/in/coding-club-iit-ropar-a73320211/" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>
+                    <a style="scale: .8" href="https://github.com/codec-ropar/" class="fa fa-github-square github zoom-upon-hover" id="github"></a>
+                    <a style="scale: .8" href="https://www.facebook.com/groups/codingclub.iitrpr/" class="fa fa-facebook-square zoom-upon-hover" id="facebook"></a>
                 </div>
             </div>
 

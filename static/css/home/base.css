@@ -6,6 +6,8 @@
   body {
     overflow-x: hidden;
     background-color: black;
+    /* font: proxima-nova, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
   }
   
   #main {
@@ -169,6 +171,7 @@
     transition: all ease-in-out 350ms;
   }
   
+
   
   /*Styling Hamburger Icon*/
   .hamburger div {
@@ -277,6 +280,12 @@
     justify-content: center;
     /* border: 2px solid red; */
     /* background-color: black; */
+  }
+
+  .glow-text {
+    color: white;
+    /* animation: glowing 3s infinite; */
+    text-shadow: 0 0 2px #fff, 0 0 5px #fff;
   }
   
   

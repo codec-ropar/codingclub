@@ -55,7 +55,14 @@
             <div class="hero-text">
                 <img style="width: 8rem;" src="{% static 'images/logo.png' %}" alt="Logo Image">
                 <div id="coding-club-heading" class="prevent-select" style="margin: 2rem; font-weight:600;">CODING CLUB<br>IIT ROPAR</div>
-                <p class="prevent-select" style="color: white; margin-bottom: 5rem; text-align: center;">A thriving community of tech enthusiasts, dedicated to honing coding skills, fostering innovation, and embracing challenges. With a focus on competitive programming and collaborative learning, we empower members to push boundaries, explore emerging technologies, and unleash their full coding potential.</p>
+                <p class="prevent-select" style="color: white; margin-bottom: 5rem; text-align: center;">
+                    A thriving community of tech enthusiasts, dedicated to honing coding skills, fostering innovation, and embracing challenges.
+                    <script>
+                        if(window.innerHeight < window.innerWidth){
+                            document.write("With a focus on competitive programming and collaborative learning, we empower members to push boundaries, explore emerging technologies, and unleash their full coding potential.");
+                        }
+                    </script>
+                </p>
                 <div class="social-media">
                     <a style="scale: .8" href="https://www.instagram.com/coding_iitrpr/" class="fa fa-instagram zoom-upon-hover" id="instagram"></a>
                     <a style="scale: .8" href="https://www.linkedin.com/in/coding-club-iit-ropar-a73320211/" class="fa fa-linkedin zoom-upon-hover" id="linkedin"></a>

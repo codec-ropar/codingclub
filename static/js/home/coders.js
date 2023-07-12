@@ -47,7 +47,7 @@ function getRatingsColorClass(ratings) {
     let color = getRatingsColorClass(ratings);
     box.innerHTML += `<div class="name"><p class="${color}">${name}</p></div>
       <div class="handle"><a class="${color}" href="https://codeforces.com/profile/${handle}">${handle}</a></div>
-      <div class="score"><p>${score}</p></div>`;
+      <div class="score"><p>${score} %ile</p></div>`;
   
     return box;
   }

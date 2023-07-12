@@ -1,5 +1,5 @@
 # Coding Club IIT Ropar Official Website
-![codingclub_homepage](https://github.com/codec-ropar/codingclub/assets/46725278/4e08b34e-481e-4c21-bd6e-c1f874e5096f)
+![home](https://github.com/codec-ropar/codingclub/assets/69471106/075cfff8-5ad9-4f93-a3f4-0d7c481a7972)
 
 Welcome to the [official website](https://thecodingclub.vercel.app/) of The Coding Club! This website is built using [Django](https://www.djangoproject.com/), a high-level Python web framework, and it serves as a platform to showcase our club's activities, projects, and resources.
 

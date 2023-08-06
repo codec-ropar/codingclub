@@ -12,7 +12,7 @@ PERCENTILE_NORMALISING_FACTOR = {
     4: .9   # For Codeforces (Div. 4)
 }
 
-DAYS_OFFSET = 12
+DAYS_OFFSET = 5
 
 
 invalidHandles = set()     # Memorizes invalid handles to avoid unnecessary API calls
@@ -246,7 +246,7 @@ def getPercentile(contestID, handles):
 def getYearFromEmail(email):
     """
     Checks whether the student is in the first year, second year, third year or fourth year.
-    Assumes 1st September as the start of the new academic year.
+    Assumes 1st August as the start of the new academic year.
     Returns 1, 2, 3 or 4.
     Prepatory year students are considered to be in year 1.
     All Courses except B.Tech are considered to be in year 4.
@@ -262,7 +262,7 @@ def getYearFromEmail(email):
         return 4
     
     enrollmentYear = int(email[:4])
-    admissionTime = datetime(enrollmentYear, 9, 1)     # Assuming 1st September as the start of the new academic year
+    admissionTime = datetime(enrollmentYear, 8, 1)     # Assuming 1st August as the start of the new academic year
     currentTime = datetime.now()
     if currentTime < admissionTime:
         return 1

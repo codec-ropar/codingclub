@@ -28,13 +28,8 @@ async function getGoogleSheetData(url) {
             }
             return result;
         });
-    // console.log(data);
     return data;
 }
-
-// getGoogleSheetData(url);
-
-
 
 function createTeamCard(userData) {
     let name = userData.name, position = userData.position, batch = userData.batch, image = userData.image, handle = userData.handle, cf_title = userData.cf_title, linkedin = userData.linkedin, github = userData.github;
@@ -47,9 +42,8 @@ function createTeamCard(userData) {
         <div class="fullname-text">${name}</div>
         <p>${position}</p>
         <div class="social-media">
-            ${github?'<a href="'+github+'" class="github fa fa-github-square github zoom-upon-hover"></a>':''}
-            <a href="https://codeforces.com/profile/${handle}" class="date ${cf_title.toLowerCase()}">${handle}</a>
-            ${linkedin?'<a href="'+linkedin+'" class="linkedin fa fa-linkedin zoom-upon-hover"></a>':''}
+            <a href="https://codeforces.com/profile/${handle}" class="date ${cf_title.toLowerCase()}" target="_blank">${handle}</a>
+            ${linkedin ? '<a href="' + linkedin + '" class="linkedin fa fa-linkedin zoom-upon-hover" target="_blank"></a>' : ''}
         </div>
     </div>`;
     return card;

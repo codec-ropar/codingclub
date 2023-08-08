@@ -21,60 +21,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;900&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">    {% block cssfiles %}
-    {% endblock cssfiles %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;900&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet"> {% block cssfiles %}{% endblock cssfiles %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>{% block title %}{% endblock %}</title>
   </head>
+
   <body>
-    <div id="bg" class="prevent-select">
-      <img src="{% static 'images/bg.jpg' %}" alt="Backgroud Image">
+    <div class="background" id="background">
+      <div class="gradient"></div>
+      <div class="gradient-2"></div>
     </div>
-
-
-    <nav>
-      <div class="hamburger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-      </div>
-      <ul class="nav-links prevent-select glow-text">
-          <li><a href="/">Home</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/coders">Coder of the Month</a></li>
-          <li><a href="/team">Meet the Team</a></li>
-          <li><a href="/alumni">Alumni</a></li>
-          <li><a href="/login">Login</a></li>
-          <!-- <li><a href="#">Team 2021</a></li> -->
-          <!-- <li><a href="#">Contact Us</a></li> -->
-          <!-- <li><a href="#">Sign Up</a></li> -->
-          <!-- <li><button class="login-button" href="#">Login</button></li>
-          <li><button class="join-button" href="#">Sign Up</button></li> -->
-      </ul>
-    </nav>
-
-
+    
     <div id="main">
+      <nav>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links glow-text">
+            <li class="nav-logo"><img src="static/images/logo.png">Coding Club</img></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/coders">Coder of the Month</a></li>
+            <li><a href="/team">Team</a></li>
+            <a class="login-btn" href="/login"><li>Login</li></a>
+        </ul>
+      </nav>
+      
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+      </div>
 
-      <content>
-
+      <content id="content" class="content">
         {% block content %}
-
         {% endblock content %}
-
       </content>
 
-      
       <footer>
-        <p>
-          Copyright &copy; 2023 - The Coding Club - IIT Ropar
+        <p class="glow-text">
+          Copyright &copy; 2023 Coding Club | Indian Institute of Technology Ropar
         </p>
       </footer>
     </div>
     
-
-
-
-
     <script>
       (function(){
 
@@ -82,25 +74,16 @@
         {% block parallaxspeed %}
         {% endblock parallaxspeed %}
 
-
         window.onscroll = function(){
           [].slice.call(parallax).forEach(function(el,i){
-
             var windowYOffset = window.pageYOffset,
                 elBackgrounPos = "" + (windowYOffset * speed * -1) + "px";
-
             el.style.top = elBackgrounPos;
-
           });
         };
 
         })();
     </script>
-
-    <script src="{% static 'js/home/nav.js' %}"></script>
-    
-    <script src="{% static 'js/home/vanilla-tilt.min.js' %}"></script>
-
     <script>
       VanillaTilt.init(document.querySelectorAll(".card"), {
         glare: true,
@@ -108,5 +91,8 @@
         "max-glare": 0.05,
       });
     </script>
+    <script src="{% static 'js/home/nav.js' %}"></script>
+    <script src="{% static 'js/home/vanilla-tilt.min.js' %}"></script>
+    <script src="{% static 'js/home/background.js' %}"></script>
   </body>
 </html>

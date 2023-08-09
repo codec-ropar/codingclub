@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Events{% endblock title %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'css/events.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+    <script src="{% static 'js/events.js' %}"></script>
+    
+{% endblock %}
+
+{% block parallaxspeed %}
+    speed = 0.2;
+{% endblock %}

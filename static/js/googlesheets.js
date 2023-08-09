@@ -7,14 +7,19 @@ async function getGoogleSheetData(url) {
             let rows = data.split('\n');
             let result = [];
             for (let i = 1; i < rows.length; i++) {
-                if (!rows[i].trim()) continue; // skip empty lines
+                // Skip empty lines
+                if (!rows[i].trim()) {
+                    continue;
+                }
+
+                // Checking whether the current row is a separator or not
+                // The first cell must be a hyphen if it is a separator
                 let cells = rows[i].split('\t');
-                // Checking if the row is a separator or not
-                // If it is a separator, then the first cell must be hyphen
                 if (cells[0].trim() == '-') {
                     result.push([cells[1].trim()]);
                     continue;
                 }
+
                 result[result.length - 1].push({
                     name: cells[0].trim(),
                     position: cells[1].trim(),

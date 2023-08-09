@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('login', views.login, name='login'),
@@ -14,8 +15,6 @@ urlpatterns = [
     path('coders/', views.coders, name='coders'),
     path('events', views.events, name='events'),
     path('events/', views.events, name='events'),
-    path('alumni', views.alumni, name='alumni'),
-    path('alumni/', views.alumni, name='alumni'),
     path('updateCoders', views.updateCoders, name='updateCoders'),
     path('updateCoders/', views.updateCoders, name='updateCoders'),
 ]

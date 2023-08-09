@@ -1,0 +1,100 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin-left: 5vw;
+  width: 90vw;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  position: relative;
+  width: 9rem;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: translateY(-20px) rotate(30deg) scale(1.2);
+  animation: none;
+}
+
+#coding-club-heading {
+  color: rgb(248, 248, 213);
+  margin: 1.5rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.description {
+  color: rgb(180, 180, 180);
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.description:hover {
+  transform: scale(1.1);
+}
+
+.social-media {
+  margin-top: 0.5rem;
+}
+
+.fa {
+  color: rgb(248, 248, 213);
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.zoom-upon-hover:hover {
+  transform: scale(1.2);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-description {
+  flex: 1;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+#firecracker-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.firecracker-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #00ffcc;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
+  animation: explode 0.7s ease-out;
+}

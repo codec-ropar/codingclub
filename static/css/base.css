@@ -8,7 +8,6 @@
 body {
   overflow-x: hidden;
   background-color: black;
-  /* font: proxima-nova, sans-serif; */
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -118,42 +117,6 @@ nav {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Buttons */
-.login-button {
-  color: white;
-  background-color: transparent;
-  border: 1.5px solid #f2f5f7;
-  border-radius: 2em;
-  padding: 0.6rem 0.8rem;
-  margin-left: 2vw;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.login-button:hover {
-  color: #131418;
-  background-color: #f2f5f7;
-  border: 1.5px solid #f2f5f7;
-  transition: all ease-in-out 350ms;
-}
-
-.join-button {
-  color: #131418;
-  background-color: #61dafb;
-  border: 1.5px solid #61dafb;
-  border-radius: 2em;
-  padding: 0.6rem 0.8rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.join-button:hover {
-  color: #f2f5f7;
-  background-color: transparent;
-  border: 1.5px solid #f2f5f7;
-  transition: all ease-in-out 350ms;
-}
-
 /* Hamburger Icon */
 .hamburger div {
   width: 30px;
@@ -171,6 +134,24 @@ nav {
   color: black;
 }
 
+.line1 .line2 .line3 {
+  background-color: white;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  transition: all 0.7s ease;
+  width: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Background */
 .background {
   position: fixed;
   top: 0;
@@ -208,6 +189,7 @@ nav {
   filter: blur(20px);
 }
 
+/* Loading */
 .loading {
   position: fixed;
   top: 0;
@@ -240,6 +222,7 @@ nav {
   }
 }
 
+/* No Data Found Message */
 .no-data-message {
   position: fixed;
   top: 50%;
@@ -268,108 +251,38 @@ nav {
   display: none;
 }
 
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  margin-left: 5vw;
-  width: 90vw;
-}
-
-.hero-text {
-  text-align: center;
-  color: white;
-}
-
-.logo {
-  position: relative;
-  width: 9rem;
-  transition: transform 0.3s;
-}
-
-.logo:hover {
-  transform: translateY(-20px) rotate(30deg) scale(1.2);
-  animation: none;
-}
-
-#coding-club-heading {
-  color: rgb(248, 248, 213);
-  margin: 1.5rem;
-  font-weight: 600;
-  font-size: 2rem;
-}
-
-.description {
-  color: rgb(180, 180, 180);
-  margin-bottom: 5rem;
-  text-align: center;
-  font-size: 1.1rem;
-  position: relative;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.description:hover {
-  transform: scale(1.1);
-}
-
-.social-media {
-  margin-top: 0.5rem;
-}
-
-.fa {
-  color: rgb(248, 248, 213);
-  font-size: 1.3rem;
-  margin: 0 0.5rem;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.zoom-upon-hover:hover {
-  transform: scale(1.2);
-}
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.text-description {
-  flex: 1;
-  padding: 0 2rem;
-  text-align: left;
-}
-
-#firecracker-canvas {
+/* Footer */
+footer {
+  width: 100vw;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 9999;
+  bottom: 0;
+  height: 3rem;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  background-color: rgba(13, 0, 19, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.01);
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.firecracker-particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #00ffcc;
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(0);
-  animation: explode 0.7s ease-out;
+/* Text */
+.glow-text {
+  color: white;
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff;
 }
 
-/*Small Screens*/
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Small Screens */
 @media screen and (max-width: 800px) {
   nav {
     position: fixed;
@@ -452,56 +365,4 @@ nav {
   .nav-logo {
     display: none;
   }
-}
-
-/* Hamburger Icon onClick */
-.line1 .line2 .line3 {
-  background-color: white;
-}
-
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2 {
-  transition: all 0.7s ease;
-  width: 0;
-}
-
-.toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-footer {
-  width: 100vw;
-  position: fixed;
-  bottom: 0;
-  height: 3rem;
-  font-size: 1rem;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 20px;
-  background-color: rgba(13, 0, 19, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1;
-  border-top: 1px solid rgba(255, 255, 255, 0.01);
-  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
-  /* Bottom shadow for glassy effect */
-}
-
-.glow-text {
-  color: white;
-  /* animation: glowing 3s infinite; */
-  text-shadow: 0 0 2px #fff, 0 0 5px #fff;
-}
-
-.prevent-select {
-  -webkit-user-select: none;
-  /* Safari */
-  -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  user-select: none;
-  /* Standard syntax */
 }

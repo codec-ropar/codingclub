@@ -1,11 +1,11 @@
-{% extends 'home/base.html' %}
+{% extends 'base.html' %}
 
 {% load static %}
 
 {% block title %}Coder of the Month{% endblock title %}
 
 {% block cssfiles %}
-    <link rel="stylesheet" href="{% static 'css/home/coders.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/coders.css' %}"/>
     <script>
         var data = {{ json|safe }};
     </script>
@@ -45,7 +45,7 @@
         contentElement.style.display = 'flex';
         contentElement.style.flexDirection = 'column';
     </script>
-    <script src="{% static 'js/home/coders.js' %}"></script>
+    <script src="{% static 'js/coders.js' %}"></script>
 
 {% endblock %}
 

@@ -21,8 +21,8 @@ function createBox(rank, name, handle, ratings, score) {
     noDataDiv.innerHTML += `<p>No data found</p>`;
     return noDataDiv;
   } else {
-  let box = document.createElement("div");
-  box.classList.add("box");
+    let box = document.createElement("div");
+    box.classList.add("box");
 
     box.addEventListener("click", () => {
       window.open(`https://codeforces.com/profile/${handle}`, "_blank");
@@ -34,19 +34,19 @@ function createBox(rank, name, handle, ratings, score) {
     if (rank == 1) {
       box.classList.add("first", "extra");
       let img = document.createElement("img");
-      img.setAttribute("src", "/static/images/1st_gold.png");
+      img.setAttribute("src", "/static/images/gold-medal.png");
       img.setAttribute("alt", "1st");
       rankDiv.appendChild(img);
     } else if (rank == 2) {
       box.classList.add("second", "extra");
       let img = document.createElement("img");
-      img.setAttribute("src", "/static/images/2nd_silver.png");
+      img.setAttribute("src", "/static/images/silver-medal.png");
       img.setAttribute("alt", "2nd");
       rankDiv.appendChild(img);
     } else if (rank == 3) {
       box.classList.add("third", "extra");
       let img = document.createElement("img");
-      img.setAttribute("src", "/static/images/3rd_bronze.png");
+      img.setAttribute("src", "/static/images/bronze-medal.png");
       img.setAttribute("alt", "3rd");
       rankDiv.appendChild(img);
     } else {

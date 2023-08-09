@@ -1,15 +1,14 @@
-{% extends 'home/base.html' %}
+{% extends 'base.html' %}
 
 {% load static %}
 
 {% block title %}Home{% endblock title %}
 
 {% block cssfiles %}
-    <link rel="stylesheet" href="{% static 'css/home/base.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
 {% endblock %}
 
 {% block content %}
-
 
 <div class="hero">
     <canvas id="firecracker-canvas"></canvas>
@@ -60,35 +59,6 @@
         </div>
     </div>
 
-    <script>
-        var firstHero = document.querySelector('.hero');
-        var secondHero = document.querySelector('#secondHero');
-
-        if (window.innerHeight < window.innerWidth) {
-            firstHero.style.display = 'flex';
-            secondHero.style.display = 'none';
-        } else {
-            firstHero.style.display = 'none';
-            secondHero.style.display = 'flex';
-        }
-        window.addEventListener('resize', handleResponsiveChanges);
-    </script>
-    <script>
-        var description = document.querySelector('.description');
-    
-        description.addEventListener('mouseover', function() {
-            this.classList.add('glow-text');
-        });
-    
-        description.addEventListener('mouseout', function() {
-            this.classList.remove('glow-text');
-        });
-    </script>
-    <script>
-        document.getElementById('loading').style.display = 'none';
-        const contentElement = document.getElementById('content');
-        contentElement.style.display = 'flex';
-        contentElement.style.flexDirection = 'column';
-    </script>
+    <script src="{% static 'js/index.js' %}"></script>
 
 {% endblock %}

@@ -15,35 +15,32 @@ except:
 
 MONTH_NAME = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
+
 def index(request):
-    return render(request, 'home/index.html')
+    return render(request, 'index.html')
 
 def login(request):
-    return render(request, 'home/login.html')
+    return render(request, 'login.html')
 
 def signup(request):
-    return render(request, 'home/signup.html')
+    return render(request, 'signup.html')
 
 def team(request):
-    return render(request, 'home/team.html')
+    return render(request, 'team.html')
 
 def coders(request):
-    # Get the latest JSON data from the database
-    global JSON_CACHE
+    global JSON_CACHE # Get the latest JSON data from the database
     try:
         JSON_CACHE = CoderOfTheMonthJSON.objects.latest('time').json
     except:
         print(f'{dt.now()} | Could not fetch JSON from database')
     month = (dt.now() - timedelta(days=rankings.DAYS_OFFSET)).month
     month = MONTH_NAME[month-1]
-    return render(request, 'home/coders.html', context={'json': JSON_CACHE, 'month': month})
+    
+    return render(request, 'coders.html', context={'json': JSON_CACHE, 'month': month})
 
 def events(request):
-    return render(request, 'home/events.html')
-
-def alumni(request):
-    return render(request, 'home/alumni.html')
-
+    return render(request, 'events.html')
 
 def updateCoders(request):
     print(f'{dt.now()} | Updating coders...')
@@ -57,4 +54,3 @@ def updateCoders(request):
         return JsonResponse({'status': 'error', 'message': 'Could not update database', 'json': json_str})
     
     return JsonResponse({'status': 'success', 'message': 'Successfully updated database', 'time': str(dt.now()), 'json': json_str})
-

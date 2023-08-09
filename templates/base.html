@@ -5,15 +5,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Coding Club IIT Ropar">
+    <meta property="og:title" content="Coding Club, IITRPR">
     <meta property="og:description" content="Official website">
-    <meta property="og:image" content="{% static 'images/logo-new.jpg' %}">
+    <meta property="og:image" content="{% static 'images/logo.png' %}">
     <meta property="og:image:alt" content="Coding Club">
     <meta property="og:url" content="https://thecodingclub.vercel.app/">
     <meta name="twitter:card" content="Official website">
 
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,31 +68,24 @@
     </div>
     
     <script>
-      (function(){
+      (function () {
 
         var parallax = document.querySelectorAll("#bg > img"), speed = 0.3;
         {% block parallaxspeed %}
         {% endblock parallaxspeed %}
-
-        window.onscroll = function(){
-          [].slice.call(parallax).forEach(function(el,i){
-            var windowYOffset = window.pageYOffset,
-                elBackgrounPos = "" + (windowYOffset * speed * -1) + "px";
-            el.style.top = elBackgrounPos;
-          });
+    
+        window.onscroll = function () {
+            [].slice.call(parallax).forEach(function (el, i) {
+                var windowYOffset = window.pageYOffset,
+                    elBackgrounPos = "" + (windowYOffset * speed * -1) + "px";
+                el.style.top = elBackgrounPos;
+            });
         };
-
-        })();
+    
+      })();
     </script>
-    <script>
-      VanillaTilt.init(document.querySelectorAll(".card"), {
-        glare: true,
-        reverse: true,
-        "max-glare": 0.05,
-      });
-    </script>
-    <script src="{% static 'js/home/nav.js' %}"></script>
-    <script src="{% static 'js/home/vanilla-tilt.min.js' %}"></script>
-    <script src="{% static 'js/home/background.js' %}"></script>
+    <script src="{% static 'js/background.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
   </body>
 </html>

@@ -372,3 +372,7 @@
 #sub-header marquee a {
   color: blueviolet;
 }
+
+body {
+  overflow-x: initial !important;
+}

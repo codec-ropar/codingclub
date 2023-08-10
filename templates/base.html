@@ -61,7 +61,7 @@
       </content>
 
       <footer>
-        <p class="glow-text">
+        <p class="glow-text" style="width: 100vw; text-align: center;">
           Copyright &copy; 2023 Coding Club | Indian Institute of Technology Ropar
         </p>
       </footer>
@@ -69,7 +69,7 @@
     
     <script>
       (function () {
-
+{% comment %} 
         var parallax = document.querySelectorAll("#bg > img"), speed = 0.3;
         {% block parallaxspeed %}
         {% endblock parallaxspeed %}
@@ -80,7 +80,7 @@
                     elBackgrounPos = "" + (windowYOffset * speed * -1) + "px";
                 el.style.top = elBackgrounPos;
             });
-        };
+        }; {% endcomment %}
     
       })();
     </script>

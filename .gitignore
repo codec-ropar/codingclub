@@ -1,3 +1,26 @@
 *.env
 superuser_creds.txt
+
+# Ignore compiled Python files
 *.pyc
+
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.pydevproject
+*.pyc
+
+# Ignore local development settings (use separate settings files for local and production)
+local_settings.py
+
+# Ignore migration history (recommended to use migrations for database changes)
+*/migrations/
+
+# Ignore compiled Python files in 'site-packages' or 'dist' directories
+*.pyc
+**/*.pyc
+
+# Ignore any compiled output
+__pycache__/
+*.py[cod]

@@ -50,7 +50,7 @@ async function main() {
                     events_block = document.createElement('div');
                     events_block.innerHTML = `
                     <div class="event-image">
-                        <img src="https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/Events/${data[i][5]}">
+                        <img src="https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/events/${data[i][5]}">
                     </div>
                     <div class="event-details">
                         <h2>${data[i][0]}</h2>

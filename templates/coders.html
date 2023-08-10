@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Coder of the Month{% endblock title %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'css/coders.css' %}"/>
+    <script>
+        var data = {{ json|safe }};
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <div id="sub-header">
+        <marquee onmouseover="this.stop();" onmouseout="this.start();">
+            Please fill out the provided <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH8HEh8Vqp7afaTCS2lciifwCHMoHUHEKZj97fYioewrNDdQ/viewform?usp=sf_link" target="_blank">form</a> to have your name featured below
+        </marquee>
+    </div>
+
+    <div class="heading">
+        <h1 style="text-align: center;">Coder of the Month ({{ month }})</h1>
+    </div>
+    <div class="tabs">
+        <div class="tab-header">
+            <div class="year active">First Year (B.Tech)</div>
+            <div class="year">Second Year (B.Tech)</div>
+            <div class="year">Third Year (B.Tech)</div>
+            <div class="year">Fourth Year (B.Tech), M.Tech &amp; PhD</div>
+        </div>
+
+        <div class="tab-indicator"></div>
+        <div class="rankings">
+            <div id ="year1" class="omega active"></div>
+            <div id="year2" class="alpha"></div>
+            <div id="year3" class="beta"></div>
+            <div id="year4" class="gamma"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loading').style.display = 'none';
+        const contentElement = document.getElementById('content');
+        contentElement.style.display = 'flex';
+        contentElement.style.flexDirection = 'column';
+    </script>
+    <script src="{% static 'js/coders.js' %}"></script>
+
+{% endblock %}
+
+{% block parallaxspeed %}
+    speed = 0.2;
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+    <canvas id="firecracker-canvas"></canvas>
+    <div class="hero-text">
+        <div class="hero-content">
+            <div class="logo-heading">
+                <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo Image">
+                <div id="coding-club-heading" class="glow-text">Coding Club<br>Indian Institute of Technology<br>Ropar</div>
+                    <div class="social-media">
+                        <a href="https://www.instagram.com/coding_iitrpr/" class="fa fa-instagram zoom-upon-hover" id="instagram" target="_blank"></a>
+                        <a href="https://www.linkedin.com/in/coding-club-iit-ropar-a73320211/" class="fa fa-linkedin zoom-upon-hover" id="linkedin" target="_blank"></a>
+                        <a href="https://github.com/codec-ropar/" class="fa fa-github-square github zoom-upon-hover" id="github" target="_blank"></a>
+                        <a href="https://www.facebook.com/groups/codingclub.iitrpr/" class="fa fa-facebook-square zoom-upon-hover" id="facebook" target="_blank"></a>
+                    </div>
+                </div>
+                <div class="text-description">
+                    <p class="description prevent-select">
+                        A thriving community of tech enthusiasts, dedicated to honing coding skills, fostering innovation, and embracing challenges.
+                        <script>
+                            if (window.innerHeight < window.innerWidth) {
+                                document.write("With a focus on competitive programming and collaborative learning, we empower members to push boundaries, explore emerging technologies, and unleash their full coding potential.");
+                            }
+                        </script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero" id="secondHero">
+        <div class="hero-text">
+            <img class="logo" src="{% static 'images/logo.png' %}" alt="Logo Image">
+            <div id="coding-club-heading" class="glow-text">Coding Club<br>Indian Institute of Technology Ropar</div>
+            <p class="description prevent-select">
+                A thriving community of tech enthusiasts, dedicated to honing coding skills, fostering innovation, and embracing challenges.
+                <script>
+                    if (window.innerHeight >= window.innerWidth) {
+                        document.write("With a focus on competitive programming and collaborative learning, we empower members to push boundaries, explore emerging technologies, and unleash their full coding potential.");
+                    }
+                </script>
+            </p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/coding_iitrpr/" class="fa fa-instagram zoom-upon-hover" id="instagram" target="_blank"></a>
+                <a href="https://www.linkedin.com/in/coding-club-iit-ropar-a73320211/" class="fa fa-linkedin zoom-upon-hover" id="linkedin" target="_blank"></a>
+                <a href="https://github.com/codec-ropar/" class="fa fa-github-square github zoom-upon-hover" id="github" target="_blank"></a>
+                <a href="https://www.facebook.com/groups/codingclub.iitrpr/" class="fa fa-facebook-square zoom-upon-hover" id="facebook" target="_blank"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}

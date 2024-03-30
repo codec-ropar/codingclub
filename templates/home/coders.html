@@ -1,0 +1,56 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Coder of the Month{% endblock title %}
+
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'css/home/coders.css' %}"/>
+    <script>
+        var data = {{ json|safe }};
+    </script>
+{% endblock %}
+
+
+{% block content %}
+
+    <div id="sub-header">
+        <marquee onmouseover="this.stop();" onmouseout="this.start();">
+            Pro Tip: To get your name listed below, fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeH8HEh8Vqp7afaTCS2lciifwCHMoHUHEKZj97fYioewrNDdQ/viewform?usp=sf_link">form</a>
+        </marquee>
+    </div>
+
+    <div class="heading">
+        <h1 style="text-align: center;">Coder of the Month - {{ month }}</h1>
+    </div>
+    <div class="tabs">
+    <div class="tab-header">
+    <div class="active year">1st year</div>
+    <div class="year">2nd year</div>
+    <div class="year">3rd year</div>
+    <div class="year">4th year, M.Tech &amp; Phd</div>
+    </div>
+
+    <div class="tab-indicator"></div>
+    <div class="rankings">
+    <div id ="year1" class="omega active"></div>
+    <div id="year2" class="alpha"></div>
+    <div id="year3" class="beta"></div>
+    <div id="year4" class="gamma"></div>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('main').style.height = '500vh';
+    </script>
+    
+    <script src="{% static 'js/home/coders.js' %}"></script>
+
+{% endblock %}
+
+
+{% block parallaxspeed %}
+    speed = 0.2;
+{% endblock %}
+

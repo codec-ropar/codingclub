@@ -7,19 +7,14 @@ async function getGoogleSheetData(url) {
             let rows = data.split('\n');
             let result = [];
             for (let i = 1; i < rows.length; i++) {
-                // Skip empty lines
-                if (!rows[i].trim()) {
-                    continue;
-                }
-
-                // Checking whether the current row is a separator or not
-                // The first cell must be a hyphen if it is a separator
+                if (!rows[i].trim()) continue; // skip empty lines
                 let cells = rows[i].split('\t');
+                // Checking if the row is a separator or not
+                // If it is a separator, then the first cell must be hyphen
                 if (cells[0].trim() == '-') {
                     result.push([cells[1].trim()]);
                     continue;
                 }
-
                 result[result.length - 1].push({
                     name: cells[0].trim(),
                     position: cells[1].trim(),
@@ -33,8 +28,13 @@ async function getGoogleSheetData(url) {
             }
             return result;
         });
+    // console.log(data);
     return data;
 }
+
+// getGoogleSheetData(url);
+
+
 
 function createTeamCard(userData) {
     let name = userData.name, position = userData.position, batch = userData.batch, image = userData.image, handle = userData.handle, cf_title = userData.cf_title, linkedin = userData.linkedin, github = userData.github;
@@ -42,13 +42,14 @@ function createTeamCard(userData) {
     card.classList.add("card");
     card.classList.add("rgb");
     card.innerHTML = `
-    <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/profiles/${image}'), black; background-position: top; background-size:cover;"></div>
+    <div class="card-image" style="background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),url('https://raw.githubusercontent.com/codec-ropar/codingclub/main/static/images/profile/${image}'), black; background-position: top; background-size:cover;"></div>
     <div class="card-text">
         <div class="fullname-text">${name}</div>
         <p>${position}</p>
         <div class="social-media">
-            <a href="https://codeforces.com/profile/${handle}" class="date ${cf_title.toLowerCase()}" target="_blank">${handle}</a>
-            ${linkedin ? '<a href="' + linkedin + '" class="linkedin fa fa-linkedin zoom-upon-hover" target="_blank"></a>' : ''}
+            ${github?'<a href="'+github+'" class="github fa fa-github-square github zoom-upon-hover"></a>':''}
+            <a href="https://codeforces.com/profile/${handle}" class="date ${cf_title.toLowerCase()}">${handle}</a>
+            ${linkedin?'<a href="'+linkedin+'" class="linkedin fa fa-linkedin zoom-upon-hover"></a>':''}
         </div>
     </div>`;
     return card;

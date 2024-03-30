@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Alumni | Coding Club{% endblock title %}
+
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="{% static 'css/home/alumni.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/home/team.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+
+<script src="{% static 'js/home/googlesheets.js' %}"></script>
+<script>
+    async function populateTeam() {
+        let dataArray = await getGoogleSheetData(url);
+        try {
+            for (let j = 1; j < dataArray.length; j++) {
+                data = dataArray[j]; // because data[0] is current year team so exclude it
+                document.querySelector("#main > content").appendChild(createHeading(data[0]));
+                for (let i = 1; i < data.length; i++) {
+                    document.querySelector("#main > content").appendChild(createTeamCard(data[i]));
+                }
+            }
+            VanillaTilt.init(document.querySelectorAll(".card"), {
+                max: 25,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.5,
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    populateTeam();
+    
+    // Changing height of #main
+    let main = document.querySelector("#main");
+    main.style.height = "auto";
+</script>    
+
+{% endblock %}
